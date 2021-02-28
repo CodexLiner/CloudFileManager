@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    app:cardBackgroundColor="#00FFFFFF"
+    app:cardCornerRadius="10dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:baselineAligned="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialogshape"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="40dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/aclonica"
+            android:text="Create New Folder"/>
+
+        <EditText
+            android:id="@+id/FolderNameBox"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Folder Name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/edittextshape" />
+
+       <LinearLayout
+           android:baselineAligned="false"
+           android:layout_gravity="bottom|center"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <Button
+               android:id="@+id/CreateButtonBox"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center|bottom"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="20dp"
+               android:background="@drawable/buttonshape"
+               android:text="Create" />
+           <Button
+               android:id="@+id/CancelButton"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center|bottom"
+               android:layout_marginTop="20dp"
+               android:layout_marginBottom="20dp"
+               android:background="@drawable/buttonshape"
+               android:text="Cancel" />
+       </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

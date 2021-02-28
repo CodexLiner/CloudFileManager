@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1092208608676",
+    "project_id": "documentsaver-6ba71",
+    "storage_bucket": "documentsaver-6ba71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092208608676:android:fa5466b6f0aec62b122d31",
+        "android_client_info": {
+          "package_name": "com.codingergo.documentsaver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092208608676-dlr9214ipoes7fm6oqjh89gunjjf4162.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWtauN0DNEDf73RjP66A0keF75ZhME29w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092208608676-dlr9214ipoes7fm6oqjh89gunjjf4162.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.codingergo.documentsaver">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.DocumentSaver"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".PreCreatedFolder.photo"></activity>
+        <activity android:name=".PreCreatedFolder.docs" />
+        <activity android:name=".PreCreatedFolder.music" />
+        <activity android:name=".FolderManager.FolderFileViewer" />
+        <activity android:name=".HomeScreen.Home" />
+        <activity
+            android:name=".UserSignOptions.SignUp"
+            android:label="@string/title_activity_sign_up"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".UserSignOptions.LoginPanel" />
+        <activity android:name=".UserSignOptions.MainScreen" android:theme="@style/StyleSplash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
