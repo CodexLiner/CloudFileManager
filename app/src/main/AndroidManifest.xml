@@ -15,7 +15,7 @@
         <activity android:name=".PreCreatedFolder.photo"></activity>
         <activity android:name=".PreCreatedFolder.docs" />
         <activity android:name=".PreCreatedFolder.music" />
-        <activity android:name=".FolderManager.FolderFileViewer" />
+        <activity android:name=".FolderManager.FragmentClass" />
         <activity android:name=".HomeScreen.Home" />
         <activity
             android:name=".UserSignOptions.SignUp"

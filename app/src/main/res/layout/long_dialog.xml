@@ -5,103 +5,125 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        android:layout_margin="10dp"
         android:layout_gravity="center|top"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-        <LinearLayout
-            android:layout_marginTop="3dp"
-            android:background="@drawable/view_desing"
+        <TextView
+           android:layout_margin="15sp"
             android:layout_gravity="center|top"
-            android:layout_width="80dp"
-            android:layout_height="7dp"/>
+            android:layout_width="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:text="Choose Action"
+            android:layout_height="wrap_content"/>
         <LinearLayout
-            android:gravity="center"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/DeleteLong"
+            android:gravity="left"
             android:layout_gravity="center"
             android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_delete_24"
                 android:layout_margin="10dp"/>
             <TextView
+                android:id="@+id/testText"
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:gravity="center|start"
-                android:fontFamily="sans-serif"
                 android:textStyle="normal"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Delete Folder"/>
+                android:text="Delete"/>
 
         </LinearLayout>
         <LinearLayout
-            android:alpha="0.5"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black"/>
-        <LinearLayout
-            android:gravity="center"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/RenameLong"
+            android:gravity="left"
             android:layout_gravity="center"
             android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_mode_edit_24"
                 android:layout_margin="10dp"/>
             <TextView
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:gravity="center|start"
-                android:fontFamily="sans-serif"
                 android:textStyle="normal"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Rename File"/>
+                android:text="Rename"/>
 
         </LinearLayout>
         <LinearLayout
-            android:alpha="0.5"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black"/>
-        <LinearLayout
-            android:gravity="center"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/ShareLong"
+            android:gravity="left"
             android:layout_gravity="center"
             android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:src="@drawable/ic_baseline_share_24"
                 android:layout_margin="10dp"/>
             <TextView
                 android:layout_gravity="center"
                 android:textColor="@color/black"
                 android:gravity="center|start"
-                android:fontFamily="sans-serif"
                 android:textStyle="normal"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="Share With Friends"/>
+                android:text="Share With"/>
 
         </LinearLayout>
         <LinearLayout
-            android:alpha="0.5"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:id="@+id/DownloadLong"
+            android:gravity="left"
+            android:layout_gravity="center"
+            android:baselineAligned="false"
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/black"/>
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_file_download_24"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:gravity="center|start"
+                android:textStyle="normal"
+                android:textSize="20sp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Download"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

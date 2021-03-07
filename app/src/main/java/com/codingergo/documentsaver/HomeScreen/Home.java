@@ -122,6 +122,11 @@ String url ;
                         Toast.makeText(Home.this, "Home1", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                     }
+                    case R.id.power :{
+                        auth.signOut();
+                        startActivity(new Intent(getApplicationContext(),MainScreen.class));
+                        finish();
+                    }
                 }
                 return true;
             }

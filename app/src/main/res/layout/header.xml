@@ -7,11 +7,12 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="349dp"
-        android:layout_height="245dp"
-        android:src="@drawable/pappu"
+        android:layout_width="363dp"
+        android:layout_height="91dp"
+        android:src="@drawable/bannerji"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

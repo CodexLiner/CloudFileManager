@@ -42,7 +42,7 @@ import com.google.firebase.storage.UploadTask;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FolderFileViewer extends AppCompatActivity {
+public class FragmentClass extends AppCompatActivity {
 String name , id;
 TextView textView  ,lastName;
 FirebaseFirestore firestore ;
@@ -51,7 +51,7 @@ Uri path;
 FirebaseStorage firebaseStorage;
 StorageReference reference;
 FolderListAdapter folderInFolderAdapter;
-FileListViewer filesRecAdapter ;
+FileListAdapter filesRecAdapter ;
 EditText NewName;
 String mimeType;
 RecyclerView ForFolderRec , ForFileRec;
@@ -89,7 +89,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
                 Forfile.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Dialog dialog = new Dialog(FolderFileViewer.this);
+                        Dialog dialog = new Dialog(FragmentClass.this);
                         dialog.setContentView(R.layout.fileboxdialog);
                         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                         Button select = dialog.findViewById(R.id.ButtonSelect);
@@ -112,7 +112,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
                     @Override
                     public void onClick(View v) {
                        // CreateFolder();
-                        Dialog dialog = new Dialog(FolderFileViewer.this);
+                        Dialog dialog = new Dialog(FragmentClass.this);
                         dialog.setContentView(R.layout.dialogbox);
                         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
                         dialog.show();
@@ -146,7 +146,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
                                 FolderMap.put("name",name);
                                 FolderMap.put("id",df.getId());
                                 df.set(FolderMap);
-                                Toast.makeText(FolderFileViewer.this, "Created", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(FragmentClass.this, "Created", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                             }
                         });
@@ -199,7 +199,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
         FirestoreRecyclerOptions<FilesListViewerModel> options2 = new FirestoreRecyclerOptions.Builder<FilesListViewerModel>()
                 .setQuery(query2 , FilesListViewerModel.class)
                 .build();
-        filesRecAdapter = new FileListViewer(options2);
+        filesRecAdapter = new FileListAdapter(options2);
         ForFileRec.setAdapter(filesRecAdapter);
         Log.d("TAG", "RecViews: "+id);
     }
@@ -287,13 +287,13 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
                     df.set(file).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(FolderFileViewer.this, "Done Uploading", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FragmentClass.this, "Done Uploading", Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(FolderFileViewer.this, "Failed"+e, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(FragmentClass.this, "Failed"+e, Toast.LENGTH_SHORT).show();
                             progressDialog.dismiss();
                         }
                     });
@@ -305,7 +305,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
     }
 
     private void CreateFolder() {
-        Dialog dialog = new Dialog(FolderFileViewer.this);
+        Dialog dialog = new Dialog(FragmentClass.this);
         dialog.setContentView(R.layout.dialogbox);
         dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         dialog.show();
@@ -342,7 +342,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
                 FolderMap.put("name",name);
                 FolderMap.put("id",df.getId());
                 df.set(FolderMap);
-                Toast.makeText(FolderFileViewer.this, "Created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(FragmentClass.this, "Created", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();
             }
         });

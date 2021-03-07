@@ -66,8 +66,6 @@
                 <!--                    android:src="@drawable/addfolder"/>-->
             </LinearLayout>
             <LinearLayout
-                android:background="@color/white"
-                android:elevation="1dp"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
@@ -201,7 +199,7 @@
 </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        app:itemTextColor="@color/red"
+        app:itemTextColor="@color/black"
         android:layout_marginStart="10dp"
         android:layout_width="wrap_content"
         android:visibility="visible"

@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.codingergo.documentsaver.FolderManager.FileListViewer;
+import com.codingergo.documentsaver.FolderManager.FileListAdapter;
 import com.codingergo.documentsaver.FolderManager.FilesListViewerModel;
 import com.codingergo.documentsaver.R;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -48,7 +48,7 @@ public class docs extends AppCompatActivity {
     Uri path;
     EditText name;
     Dialog dialog;
-    FileListViewer fileListViewer ;
+    FileListAdapter fileListViewer ;
     String mimeType;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +138,7 @@ public class docs extends AppCompatActivity {
         Query query = firestore.collection("User").document(auth.getCurrentUser().getUid()).collection("Docs");
         FirestoreRecyclerOptions<FilesListViewerModel> options = new FirestoreRecyclerOptions.Builder<FilesListViewerModel>()
                 .setQuery(query , FilesListViewerModel.class).build();
-        fileListViewer = new FileListViewer(options);
+        fileListViewer = new FileListAdapter(options);
         recyclerView.setAdapter(fileListViewer);
 
     }
