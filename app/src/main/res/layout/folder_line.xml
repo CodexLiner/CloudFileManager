@@ -25,7 +25,7 @@
     <LinearLayout
         android:id="@+id/relativelayout"
         android:layout_marginStart="5dp"
-        android:layout_gravity="center"
+        android:layout_gravity="start"
         android:layout_width="wrap_content"
         android:orientation="vertical"
         android:baselineAligned="true"
@@ -41,7 +41,7 @@
             android:autoSizeTextType="uniform"
             android:id="@+id/textName"
             android:textColor="@color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Photos"
             android:layout_gravity="center|top"

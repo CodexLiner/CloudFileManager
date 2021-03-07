@@ -58,6 +58,7 @@ public class music extends AppCompatActivity {
         reference = firebaseStorage.getReference().child("music");
         auth = FirebaseAuth.getInstance();
         firestore  = FirebaseFirestore.getInstance();
+        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
         RecyclerViews();
         f = findViewById(R.id.fabmusic);
         f.setOnClickListener(new View.OnClickListener() {

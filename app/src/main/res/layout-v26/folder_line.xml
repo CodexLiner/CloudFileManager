@@ -34,14 +34,14 @@
             android:layout_gravity="center|bottom"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@drawable/folder_2"/>
+            android:src="@drawable/folderopen"/>
         <TextView
             android:layout_weight="1"
             android:autoSizePresetSizes="@array/autosize_text_sizes"
             android:autoSizeTextType="uniform"
             android:id="@+id/textName"
             android:textColor="@color/black"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Photos"
             android:layout_gravity="center|top"

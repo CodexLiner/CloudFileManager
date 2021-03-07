@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:background="@drawable/bottomsheetshape"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_gravity="center|top"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_marginTop="3dp"
+            android:background="@drawable/view_desing"
+            android:layout_gravity="center|top"
+            android:layout_width="80dp"
+            android:layout_height="7dp"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_delete_24"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:gravity="center|start"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Delete Folder"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:alpha="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_mode_edit_24"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:gravity="center|start"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Rename File"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:alpha="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"/>
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:baselineAligned="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_share_24"
+                android:layout_margin="10dp"/>
+            <TextView
+                android:layout_gravity="center"
+                android:textColor="@color/black"
+                android:gravity="center|start"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:textSize="25sp"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:text="Share With Friends"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:alpha="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/black"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

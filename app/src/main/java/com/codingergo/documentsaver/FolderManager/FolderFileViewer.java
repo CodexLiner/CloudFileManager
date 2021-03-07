@@ -76,6 +76,7 @@ FloatingActionButton floatingActionButton ,Forfile , Forfolder , hide;
         Forfolder.setVisibility(View.GONE);
         Forfile.setVisibility(View.GONE);
         hide.setVisibility(View.GONE);
+        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
        RecViews();
        lastNameAction();
         floatingActionButton.setOnClickListener(new View.OnClickListener() {

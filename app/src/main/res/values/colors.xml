@@ -11,4 +11,5 @@
     <color name="dark_grey">#FF000000</color>
     <color name="red">#D12828</color>
     <color name="maincolor">#CCE8DA</color>
+    <color name="main_color">#060D3A</color>
 </resources>

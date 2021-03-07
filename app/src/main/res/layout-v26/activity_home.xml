@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="0dp"
+    android:id="@+id/drawerLayout"
     tools:context=".HomeScreen.Home">
-
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="100dp">
+    <androidx.appcompat.widget.Toolbar
+        android:textDirection="inherit"
+        app:titleTextColor="@color/white"
+        android:textAlignment="viewEnd"
+        android:id="@+id/Toolbardrawer"
+        android:background="@color/main_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginEnd="20sp"
+            android:id="@+id/profilleUser"
+            android:layout_gravity="end|center"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/addfolder"/>
+    </androidx.appcompat.widget.Toolbar>
     <ScrollView
+        android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,11 +39,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
             <LinearLayout
-                android:background="#CCE8DA"
+                android:visibility="gone"
+                android:background="#060D3A"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="78dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_margin="10sp"
@@ -30,20 +51,23 @@
                     android:gravity="center|start"
                     android:layout_gravity="center"
                     android:layout_weight="2"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Document Saver"
-                    android:textSize="30sp"
+                    android:text="Welcome Gopal"
+                    android:textSize="25sp"
                     android:textStyle="bold"/>
-                <ImageView
-                    android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/ic_setting"/>
+                <!--                <de.hdodenhof.circleimageview.CircleImageView-->
+                <!--                    android:id="@+id/profilleUser"-->
+                <!--                    android:layout_gravity="center"-->
+                <!--                    android:layout_margin="20dp"-->
+                <!--                    android:layout_width="50dp"-->
+                <!--                    android:layout_height="50dp"-->
+                <!--                    android:src="@drawable/addfolder"/>-->
             </LinearLayout>
             <LinearLayout
+                android:background="@color/white"
+                android:elevation="1dp"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
@@ -58,7 +82,7 @@
                     <LinearLayout
                         android:showDividers="middle"
                         android:layout_weight="1"
-                        android:layout_marginStart="5dp"
+                        android:layout_marginStart="10dp"
                         android:layout_gravity="center"
                         android:layout_width="wrap_content"
                         android:orientation="vertical"
@@ -69,7 +93,7 @@
                             android:layout_gravity="center"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/folder_new"/>
+                            android:src="@drawable/addfolder2"/>
                         <TextView
                             android:autoSizePresetSizes="@arrays/autosize_text_sizes"
                             android:autoSizeTextType="uniform"
@@ -132,6 +156,7 @@
                             android:textSize="15sp"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:layout_marginStart="5dp"
                         android:layout_gravity="center"
@@ -172,9 +197,18 @@
 
 
         </LinearLayout>
-
-
-
-
     </ScrollView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        app:itemTextColor="@color/red"
+        android:layout_marginStart="10dp"
+        android:layout_width="wrap_content"
+        android:visibility="visible"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/header"
+        android:id="@+id/menudrawer"
+        app:itemIconSize="20dp"
+        android:layout_gravity="start"
+        app:menu="@menu/drawermenu"/>
+</androidx.drawerlayout.widget.DrawerLayout>

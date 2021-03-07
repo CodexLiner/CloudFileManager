@@ -57,6 +57,7 @@ public class photo extends AppCompatActivity {
         reference = firebaseStorage.getReference().child("photos");
         auth = FirebaseAuth.getInstance();
         firestore  = FirebaseFirestore.getInstance();
+        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
         RecyclerViews();
         f = findViewById(R.id.fabmusic);
         f.setOnClickListener(new View.OnClickListener() {

@@ -1,32 +1,45 @@
 package com.codingergo.documentsaver.HomeScreen;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
+import com.bumptech.glide.Glide;
 import com.codingergo.documentsaver.PreCreatedFolder.docs;
 import com.codingergo.documentsaver.PreCreatedFolder.music;
 import com.codingergo.documentsaver.PreCreatedFolder.photo;
 import com.codingergo.documentsaver.R;
 import com.codingergo.documentsaver.UserSignOptions.MainScreen;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
@@ -41,6 +54,14 @@ RecyclerView recyclerView;
 FirebaseFirestore firestore;
 HomeScreenFoldeerAdapter folderAdapter;
 ImageView new_Folder , music , photo , docs ;
+ImageView profile;
+DrawerLayout drawerLayout;
+NavigationView navigationView;
+ActionBarDrawerToggle toggle;
+Toolbar toolbar ;
+SharedPreferences sharedPreferences;
+SharedPreferences.Editor editor ;
+String url ;
     long backbutton;
     Toast toast;
     @Override
@@ -49,17 +70,27 @@ ImageView new_Folder , music , photo , docs ;
         setContentView(R.layout.activity_home);
         textView = findViewById(R.id.textView);
         recyclerView = findViewById(R.id.recyclerview);
+        profile = findViewById(R.id.profilleUser);
         new_Folder = findViewById(R.id.new_Folder);
         docs = findViewById(R.id.Document);
         music = findViewById(R.id.Music);
         photo = findViewById(R.id.Photos);
         auth = FirebaseAuth.getInstance();
+        drawerLayout = findViewById(R.id.drawerLayout);
+        toolbar = findViewById(R.id.Toolbardrawer);
+        setSupportActionBar(toolbar);
+        sharedPreferences = getSharedPreferences("HomeShare" ,MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        navigationView = findViewById(R.id.menudrawer);
         firestore = FirebaseFirestore.getInstance();
         user = auth.getCurrentUser();
-       Recyclerviews();
-       CreateFolder();
-       PreCreatedFolder();
-
+        getWindow().setStatusBarColor(getResources().getColor(R.color.main_color));
+           Recyclerviews();
+           CreateFolder();
+           PreCreatedFolder();
+           UserDetails();
+           NavigationViewSetUp();
+        Glide.with(profile).load(sharedPreferences.getString("url","")).placeholder(R.drawable.blank).into(profile);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,6 +99,46 @@ ImageView new_Folder , music , photo , docs ;
                 finish();
             }
         });
+    }
+
+    private void NavigationViewSetUp() {
+        toggle = new ActionBarDrawerToggle(this , drawerLayout , toolbar , R.string.open , R.string.close);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.home3 :{
+                        Toast.makeText(Home.this, "home3", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                    }
+                    case R.id.home2: {
+                        Toast.makeText(Home.this, "home2", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                    }
+                    case  R.id.home :{
+                        Toast.makeText(Home.this, "Home1", Toast.LENGTH_SHORT).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                    }
+                }
+                return true;
+            }
+        });
+    }
+
+    private void UserDetails() {
+        DocumentReference df = firestore.collection("User").document(auth.getCurrentUser().getUid());
+        df.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+               editor.putString("url", documentSnapshot.getString("url"));
+               editor.commit();
+                Glide.with(profile).load(documentSnapshot.getString("url")).placeholder(R.drawable.blank).into(profile);
+            }
+        });
+
     }
 
     private void PreCreatedFolder() {
