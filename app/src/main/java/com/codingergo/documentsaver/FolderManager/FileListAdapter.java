@@ -3,6 +3,7 @@ package com.codingergo.documentsaver.FolderManager;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.util.Log;
@@ -16,11 +17,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.codingergo.documentsaver.MyDownloadManager.MyDownloadManager;
 import com.codingergo.documentsaver.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -28,6 +31,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Handler;
 
 public class FileListAdapter extends FirestoreRecyclerAdapter<FilesListViewerModel, FileListAdapter.Holder> {
 
@@ -65,6 +69,32 @@ public class FileListAdapter extends FirestoreRecyclerAdapter<FilesListViewerMod
                 Download= bottomSheetDialog.findViewById(R.id.DownloadLong);
                 Rename = bottomSheetDialog.findViewById(R.id.RenameLong);
                 Delete = bottomSheetDialog.findViewById(R.id.DeleteLong);
+                Share.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        try{
+                            Intent intent = new Intent(Intent.ACTION_SEND);
+                            intent.putExtra(Intent.EXTRA_TEXT ,"Sharing Files");
+                            intent.putExtra(Intent.EXTRA_TEXT, model.getUrl());
+                            intent.setType("text/plain");
+                            holder.imageView.getContext().startActivity(intent);
+                        }catch (Exception e){
+                            Toast.makeText(holder.imageView.getContext(), "Something Went Wrong", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                });
+                Download.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(holder.imageView.getContext() , MyDownloadManager.class);
+                        intent.putExtra("URL", model.getUrl());
+                        intent.putExtra("Name", model.name);
+                        holder.imageView.getContext().startActivity(intent);
+                        Toast.makeText(holder.imageView.getContext(), "Downloading...", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 Delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

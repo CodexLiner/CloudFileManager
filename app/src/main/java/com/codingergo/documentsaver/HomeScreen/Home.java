@@ -28,6 +28,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.bumptech.glide.Glide;
+import com.codingergo.documentsaver.BuildConfig;
 import com.codingergo.documentsaver.PreCreatedFolder.docs;
 import com.codingergo.documentsaver.PreCreatedFolder.music;
 import com.codingergo.documentsaver.PreCreatedFolder.photo;
@@ -43,6 +44,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.text.BreakIterator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -113,19 +115,28 @@ String url ;
                     case R.id.home3 :{
                         Toast.makeText(Home.this, "home3", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                     }
                     case R.id.home2: {
                         Toast.makeText(Home.this, "home2", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                     }
                     case  R.id.home :{
                         Toast.makeText(Home.this, "Home1", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                     }
                     case R.id.power :{
                         auth.signOut();
                         startActivity(new Intent(getApplicationContext(),MainScreen.class));
                         finish();
+                    }
+                    case R.id.ShareApp :{
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("text/plain");
+                        intent.putExtra(Intent.EXTRA_TEXT, "Download This App To Save Your Documents To Cloud Storage "+"http://play.google.com/store/apps/details?id="+BuildConfig.APPLICATION_ID);
+                        startActivity(intent);
                     }
                 }
                 return true;

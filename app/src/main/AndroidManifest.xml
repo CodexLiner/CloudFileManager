@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DocumentSaver"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PreCreatedFolder.photo"></activity>
+        <activity android:name=".MyDownloadManager.MyDownloadManager"></activity>
+        <activity android:name=".PreCreatedFolder.photo" />
         <activity android:name=".PreCreatedFolder.docs" />
         <activity android:name=".PreCreatedFolder.music" />
         <activity android:name=".FolderManager.FragmentClass" />
@@ -22,7 +23,9 @@
             android:label="@string/title_activity_sign_up"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".UserSignOptions.LoginPanel" />
-        <activity android:name=".UserSignOptions.MainScreen" android:theme="@style/StyleSplash">
+        <activity
+            android:name=".UserSignOptions.MainScreen"
+            android:theme="@style/StyleSplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -12,4 +12,7 @@
     <item android:id="@+id/power"
         android:icon="@drawable/ic_sharp_power_settings_new_24"
         android:title="Sign Out"/>
+    <item android:id="@+id/ShareApp"
+        android:icon="@drawable/ic_baseline_share_24"
+        android:title="Share App"/>
 </menu>
